@@ -1,0 +1,33 @@
+Lab2 관련 안내사항 
+
+[FPGA_TEMPLATE 사용법]
+1. 압축 해제
+2. 01_RTL 에 본인이 작성한 합성 가능한 모든 RTL 추가
+3. 03_LIST의 vlist.f 에 위의 RTL file list 추가
+4. command 창에 ./start_vivado.sh 실행
+
+** SRAM을 Xilinx IP로 사용하는 경우, vivado project가 생성되면 IP Catalog에서 BRAM 생성하면 됨
+
+[Test Vector]
+    - Source Address : 0x00100007
+    - Destination Address : 0x00200002
+    - Transfer Size : 0x000000B
+    - Expected Data : 0x00_005f5e5d_5c5b5a59_5857
+
+[서버안내]
+IP : 143.248.142.187
+ID : freshman
+PW : zjflzbffja(한글로 커리큘럼)
+/home/members/freshman/Workplace/Freshman-Curriculum 내 개인 폴더에 bitstream 파일 옮겨서 사용
+
+[서버 예약 안내]
+https://testpcbooking.skedda.com/booking
+홈페이지에서 TEST PC[0] 예약 후 사용.
+
+4 - ㄷㄱ
+3 - 간단한 거
+
+
+Freshman 
+6 - ㄷㄱ
+7 - 간단한거

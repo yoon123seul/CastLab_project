@@ -1,0 +1,32 @@
+[bitstream 파일 전송 예시]
+./FPGA_TEMPLATE/dma_sample_test/dma_sample_test.runs/impl_1/
+scp fpga_top.bit freshman@143.248.142.187:/Workplace
+mv fpga_top.bit ./Workplace/Freshman-Curriculum/jinho/
+
+cd ./Workplace/XilinxAR65444/Linux/Xilinx_Answer_65444_Linux_Files/tests
+sudo make clean
+cd /home/members/freshman/Workplace/XilinxAR65444/Linux
+sudo ./build-install-driver-linux.sh
+
+sudo reboot
+
+cd ./Workplace/XilinxAR65444/Linux/Xilinx_Answer_65444_Linux_Files/tests
+sudo ./load_driver.sh
+
+[XDMA Command]
+./reg_rw /dev/xdma0_user 0x00000000 w 0x00100007
+./reg_rw /dev/xdma0_user 0x00000004 w 0x00200002
+./reg_rw /dev/xdma0_user 0x00000008 w 0x0000000b
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000000
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000001
+
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000002
+
+* xdma0 이 안될 시 xdma1 로 코드 바꿔서 진행
+./reg_rw /dev/xdma1_user 0x00000000 w 0x00100007
+./reg_rw /dev/xdma1_user 0x00000004 w 0x00200002
+./reg_rw /dev/xdma1_user 0x00000008 w 0x0000000b
+./reg_rw /dev/xdma1_user 0x0000000c w 0x00000000
+./reg_rw /dev/xdma1_user 0x0000000c w 0x00000001
+
+./reg_rw /dev/xdma1_user 0x0000000c w 0x00000002
